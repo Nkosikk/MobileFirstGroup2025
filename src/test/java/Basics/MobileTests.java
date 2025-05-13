@@ -19,7 +19,7 @@ public class MobileTests {
 //        capabilities.setCapability("platformVersion", "12.0"); // Replace with your Android version
 //        capabilities.setCapability("deviceName", "emulator-5554"); // Replace with your device/emulator name
         capabilities.setCapability("automationName", "UiAutomator2");
-        capabilities.setCapability("app", "/Users/nkosicele/Downloads/ApiDemos-debug.apk"); // Replace with the path to your APK file
+        capabilities.setCapability("app", System.getProperty("user.dir")+"/src/main/Apps/ApiDemos-debug.apk"); // Replace with the path to your APK file
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), capabilities);
     }
