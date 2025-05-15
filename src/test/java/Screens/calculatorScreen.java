@@ -12,7 +12,7 @@ public class calculatorScreen {
     @FindBy(xpath = "com.google.android.calculator:id/op_add")
     WebElement plus;
 
-    @FindBy(xpath = "com.google.android.calculator:id/result_final")
+    @FindBy(id = "com.google.android.calculator:id/result_final")
     WebElement finalResults;
 
     public calculatorScreen(AndroidDriver driver) {
@@ -28,11 +28,11 @@ public class calculatorScreen {
         driver.findElement(By.id("com.google.android.calculator:id/" + operator)).click();
     }
 
-    public void verifyResults(Integer ActualResults) {
+    public void verifyResults(Integer ExpectedResults) {
 
-        int ExpectedResults = 9;
+        int ActualResults = Integer.parseInt(finalResults.getText());
 
-        if (ExpectedResults== ActualResults) {
+        if (ExpectedResults == ActualResults) {
             assert true;
         } else {
             assert false;

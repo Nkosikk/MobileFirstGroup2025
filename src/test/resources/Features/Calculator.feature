@@ -5,4 +5,4 @@ Feature: Calculator
     And i clik the PLUS "op_add" button
     And i click the send number 3
     When i click on the EQUALS "eq" button
-    Then the result should be 8
+    Then the result should be 9
