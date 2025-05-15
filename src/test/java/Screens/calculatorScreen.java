@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class calculatorScreen {
     private AndroidDriver driver;
@@ -33,9 +34,8 @@ public class calculatorScreen {
         int ActualResults = Integer.parseInt(finalResults.getText());
 
         if (ExpectedResults == ActualResults) {
-            assert true;
+            Assert.assertTrue(true);
         } else {
-            assert false;
-        }
+            Assert.assertTrue(false);        }
     }
 }
