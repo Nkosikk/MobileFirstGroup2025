@@ -1,6 +1,7 @@
 package Basics;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -27,6 +28,7 @@ public class MobileTests {
     @Test
     public void testAppLaunch() {
         System.out.println("App launched successfully!");
+        driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Content\"]")).click();
         // Add your test logic here
     }
 
