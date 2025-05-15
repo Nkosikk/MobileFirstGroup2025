@@ -11,11 +11,11 @@ public class AppiumDriverFactory {
     private static AndroidDriver driver;
     public static AppiumDriverFactory instanceOfAppiumDriverFactory;
 
-    public AppiumDriverFactory() throws MalformedURLException {
+    public AppiumDriverFactory(String appPath) throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("automationName", "UiAutomator2");
-        capabilities.setCapability("app", System.getProperty("user.dir") + "/src/main/Apps/ApiDemos-debug.apk");
+        capabilities.setCapability("app", appPath);
         capabilities.setCapability("noReset", true);
 
         try {
@@ -27,9 +27,9 @@ public class AppiumDriverFactory {
 
     }
 
-    public static AppiumDriverFactory getInstanceOfAppiumDriverFactory() throws MalformedURLException {
+    public static AppiumDriverFactory getInstanceOfAppiumDriverFactory(String appPath) throws MalformedURLException {
         if (instanceOfAppiumDriverFactory == null) {
-            instanceOfAppiumDriverFactory = new AppiumDriverFactory();
+            instanceOfAppiumDriverFactory = new AppiumDriverFactory(appPath);
         }
         return instanceOfAppiumDriverFactory;
     }
