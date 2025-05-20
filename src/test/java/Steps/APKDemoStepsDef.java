@@ -11,13 +11,16 @@ import java.net.MalformedURLException;
 public class APKDemoStepsDef {
 
     private AndroidDriver driver;
-    Screens.APKDemoScreen APKDemoScreen;
+    APKDemoScreen aPKDemoScreen;
 
     @Given("I have an APKDemo app")
-    public void i_have_an_apk_demo_app() {
-    }
-    @And("I click on the Marquee text")
-    public void i_click_on_the_marquee_text() {
+    public void i_have_an_apk_demo_app() throws MalformedURLException {
+        String appPath = System.getProperty("user.dir") + "/src/main/Apps/ApiDemos-debug.apk";
+        AppiumDriverFactory.getInstanceOfAppiumDriverFactory(appPath);
+        this.aPKDemoScreen = new APKDemoScreen(AppiumDriverFactory.getDriver());
+    }@And("I click on the Marquee text")
+    public void i_click_on_the_TextView_text() {
+        aPKDemoScreen.ClickText();
     }
     @When("I confirm the text on Marquee")
     public void i_confirm_the_text_on_marquee() {
@@ -27,4 +30,8 @@ public class APKDemoStepsDef {
     }
 
 
+    @And("I click on the TextView text")
+    public void iClickOnTheTextViewText() {
+        aPKDemoScreen.ClickText();
+    }
 }
