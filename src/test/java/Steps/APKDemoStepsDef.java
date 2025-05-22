@@ -18,20 +18,30 @@ public class APKDemoStepsDef {
         String appPath = System.getProperty("user.dir") + "/src/main/Apps/ApiDemos-debug.apk";
         AppiumDriverFactory.getInstanceOfAppiumDriverFactory(appPath);
         this.aPKDemoScreen = new APKDemoScreen(AppiumDriverFactory.getDriver());
-    }@And("I click on the Marquee text")
+    }
+    /*@And("I click on the Marquee text")
     public void i_click_on_the_TextView_text() {
         aPKDemoScreen.ClickText();
-    }
-    @When("I confirm the text on Marquee")
-    public void i_confirm_the_text_on_marquee() {
+    }*/
+    @When("I click on the Marquee text")
+    public void i_click_on_the_marquee_text() {
+        aPKDemoScreen.ClickMarquee();
     }
     @Then("the result should be {string}")
     public void the_result_should_be(String string) {
     }
 
-
     @And("I click on the TextView text")
     public void iClickOnTheTextViewText() {
         aPKDemoScreen.ClickText();
+    }
+
+    @And("I click on the Views text")
+    public void iClickOnTheTextViewsText() throws InterruptedException {
+        Thread.sleep(5000);
+        aPKDemoScreen.ClickViews();
+        Thread.sleep(5000);
+        aPKDemoScreen.scrollUp(driver);
+
     }
 }
