@@ -59,6 +59,7 @@ public class APKDemoScreen {
 
         driver.perform(Arrays.asList(swipe));
         driver.perform(Arrays.asList(swipe));
+        driver.perform(Arrays.asList(swipe));
     }
     public static void scrollUp(AndroidDriver driver) {
         Dimension dimension = driver.manage().window().getSize();
