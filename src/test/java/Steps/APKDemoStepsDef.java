@@ -41,7 +41,7 @@ public class APKDemoStepsDef {
         Thread.sleep(5000);
         aPKDemoScreen.ClickViews();
         Thread.sleep(5000);
-        aPKDemoScreen.scrollUp(driver);
+        aPKDemoScreen.scrollDown(AppiumDriverFactory.getDriver());
 
     }
 }

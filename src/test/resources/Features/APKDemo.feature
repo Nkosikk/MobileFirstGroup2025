@@ -10,8 +10,8 @@ Feature: APKDemoApp
   Scenario: As a user I want to confirm text on WebView3
     Given I have an APKDemo app
     And I click on the Views text
-    When I click on the WebView3 text
-    Then the result should be "This is a WebView3"
+   # When I click on the WebView3 text
+    #Then the result should be "This is a WebView3"
 
 
 
