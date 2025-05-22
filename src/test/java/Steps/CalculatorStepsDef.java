@@ -7,7 +7,7 @@ import io.cucumber.java.en.*;
 
 import java.net.MalformedURLException;
 
-public class stepsDef {
+public class CalculatorStepsDef {
 
     private AndroidDriver driver;
     calculatorScreen calculatorScreen;
