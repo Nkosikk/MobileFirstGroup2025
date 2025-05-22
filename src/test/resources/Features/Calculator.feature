@@ -1,3 +1,4 @@
+@calculator @Regression, @Sanity
 Feature: Calculator
   Scenario: As a user i want to add two numbers
     Given I have a calculator
