@@ -14,7 +14,7 @@ public class APKDemoStepDef {
         System.out.println("Adding " + int1 + " and "  + int2);
     }
     @Then("the result should be {int}")
-    public void the_result_should_be(Integer rr) {
+    public void the_result_should_be(Integer int1) {
         System.out.println("int1");
 
     }
